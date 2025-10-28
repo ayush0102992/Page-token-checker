@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: token-checker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    region: oregon
+    envVars:
+      PYTHON_VERSION: 3.10.12
